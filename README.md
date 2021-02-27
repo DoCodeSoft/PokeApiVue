@@ -1,4 +1,4 @@
-# DoCode Vue-Base
+# PokeApi Vue
 
 > A Vue.js project
 
