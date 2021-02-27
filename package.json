@@ -1,0 +1,47 @@
+{
+  "name": "basedocode",
+  "description": "A Vue.js project",
+  "version": "1.0.0",
+  "author": "Do Code <docode2018@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+  },
+  "dependencies": {
+    "vue": "^2.6.12"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "axios": "^0.21.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "bootstrap": "^4.5.2",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.4",
+    "firebase": "^7.20.0",
+    "jquery": "^3.5.1",
+    "node-sass": "^4.5.3",
+    "popper.js": "^1.16.1",
+    "sass-loader": "^6.0.6",
+    "spinkit": "^2.0.1",
+    "vue-bootstrap-toggle": "^1.1.4",
+    "vue-bootstrap4-table": "^1.1.11",
+    "vue-loader": "^13.0.5",
+    "vue-router": "^3.4.3",
+    "vue-swal": "^1.0.0",
+    "vue-template-compiler": "^2.6.12",
+    "vuex": "^3.5.1",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}

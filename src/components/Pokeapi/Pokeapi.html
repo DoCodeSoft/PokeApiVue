@@ -1,0 +1,36 @@
+<div>
+  <header class="header">
+    <nav class="nav">
+        <ul class="menu">
+            <li class="item"><a @click="mostrar=true" class="link">Inicio</a></li>
+            <li class="item"><a @click="mostrar=false" class="link" id="pokeli">Pokedex</a></li>
+            <li class="item"><a href="#" class="link">Sobre Nosotros</a></li>
+            <li class="item"><a href="#" class="link">Contacto</a></li>
+        </ul>
+    </nav>
+  </header>
+  <h1>Bienvenido a la pokedex</h1>
+  <div v-if="mostrar" class="pokeball" id="pokeball">
+      <div class="esfera"></div>
+  </div>
+  <div v-else class="container-grid" id="myContent">
+    <div v-for="p in pokemones" class="cardContainer">
+      <div class="card">
+        <div class="back face">
+            <h2>{{ p.nombre }}</h2>
+            <img :src="p.imgBack" alt="ImgBack">
+            <hr>
+            <h3>Tecnicas:</h3>
+            <ul>
+              <li v-for="m in p.moves">{{ m }}</li>
+            </ul>
+        </div>
+        <div class="front face">
+            <h2>{{ p.nombre }}</h2>
+            <img :src="p.imgFront" alt="ImgFront">
+            <span>Peso: {{ p.peso }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

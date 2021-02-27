@@ -1,0 +1,88 @@
+@import "../../styles/_variables.scss";
+
+body {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 16px;
+  color: #3f3f3f !important;
+  margin: 0;
+}
+
+.img-fixed {
+  background: linear-gradient(#2d5637e6, #2d5637cf), url(../../assets/login.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  height: calc(100vh);
+  position: relative;
+}
+
+#login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  #ventanalog{
+    width: 60%;
+    margin: 0 auto;
+    .logo-login{
+      width: 400px;
+      height: 235px;
+      margin: 0 auto 40px;
+      display: flex;
+      img{
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  .box-form{
+    form{
+      border-radius: 15px;
+      color: $principal;
+      .form-group{
+        margin: 0;
+        margin-bottom: 20px;
+        input{
+          background: #fff !important;
+          color: $principal;
+          border-radius: 7px;
+          padding: 8px 15px;
+          border: none !important;
+          &:-internal-autofill-selected{
+            background: #fff !important;
+          }
+        }
+        label{
+          color: $white;
+          font-weight: 500;
+          font-size: 15px;
+        }
+      }
+      .label-danger{
+        color: red;
+        font-size: 12px;
+        font-weight: 800;
+        text-shadow: 0px 0px 7px #cecece;
+        text-align: center;
+        i{
+          margin-right: 10px;
+        }
+      }
+    }
+    .button-login{
+      background: #b7db1d;
+      width: 100%;
+      color: #3f3f3f;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 8px 0;
+      margin: 0 auto;
+      border: none;
+      border-radius: 7px;
+      display: block;
+      margin-top: 20px;
+      cursor: pointer;
+      outline: none !important;
+    }
+  }
+}
