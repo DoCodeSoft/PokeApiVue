@@ -5,13 +5,15 @@
 <script>
 // @ is an alias to /src
 import axios from "axios"
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
     export default {
         name: 'Pokeapi',
         data() {
             return {
                 titulo: "Pokeapi - Demo",
-                mostrar: false,
+                mostrar: true,
                 pokemones: []
             }
         },
@@ -19,6 +21,10 @@ import axios from "axios"
             this.obtenerApi()
         },
         methods: {
+            logout() {
+                firebase.auth().signOut()
+                this.$router.replace('/loginp')
+            },
             obtenerApi() {
                 let url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=10'
                 axios.get(url)
@@ -27,7 +33,6 @@ import axios from "axios"
                     result.data.results.forEach(el => {
                         urls.push(el.url)
                     })
-                    
                     this.nuevoObtener(urls)
                 })
                 .catch((err) => {
@@ -40,10 +45,10 @@ import axios from "axios"
                     respuesta.push(axios.get(url))
                 })
                 Promise.all(respuesta).then((valores)=>{
-                    this.obtenerDetalle2(valores)
+                    this.obtenerDetalle(valores)
                 })
             },
-            obtenerDetalle2(valores) {
+            obtenerDetalle(valores) {
                 valores.forEach((poketodo)=>{
                     let pokemon = poketodo.data
                     let obj = {
@@ -52,22 +57,16 @@ import axios from "axios"
                             peso: pokemon.weight,
                             imgFront: pokemon.sprites.front_default,
                             imgBack: pokemon.sprites.back_default,
-                            moves: this.obtenerTecnicas2(pokemon.moves)
+                            moves: this.obtenerTecnicas(pokemon.moves)
                         }
                     this.pokemones.push(obj)
                 })
-                
-                
-            },obtenerTecnicas2(moves) {
+            },obtenerTecnicas(moves) {
                 let movesFinal = []
-                try {
-                    let i = 0
-                    for (i; i < 4; i++) {
-                        let id = Math.floor(Math.random() * moves.length)
-                        movesFinal.push(moves[id].move.name)
-                    }
-                } catch (error) {
-                console.error(error)
+                let i = 0
+                for (i; i < 4; i++) {
+                    let id = Math.floor(Math.random() * moves.length)
+                    movesFinal.push(moves[id].move.name)
                 }
                 return movesFinal
             }

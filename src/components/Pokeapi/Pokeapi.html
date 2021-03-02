@@ -5,7 +5,7 @@
             <li class="item"><a @click="mostrar=true" class="link">Inicio</a></li>
             <li class="item"><a @click="mostrar=false" class="link" id="pokeli">Pokedex</a></li>
             <li class="item"><a href="#" class="link">Sobre Nosotros</a></li>
-            <li class="item"><a href="#" class="link">Contacto</a></li>
+            <li class="item"><button @click="logout" class="btn btn-danger">Cerrar Sesion</button></li>
         </ul>
     </nav>
   </header>
@@ -19,7 +19,7 @@
         <div class="back face">
             <h2>{{ p.nombre }}</h2>
             <img :src="p.imgBack" alt="ImgBack">
-            <hr>
+            <div><button class="btn btn-info">Ver Mas</button></div>
             <h3>Tecnicas:</h3>
             <ul>
               <li v-for="m in p.moves">{{ m }}</li>
@@ -27,6 +27,7 @@
         </div>
         <div class="front face">
             <h2>{{ p.nombre }}</h2>
+            <h5>No. {{ p.id }}</h5>
             <img :src="p.imgFront" alt="ImgFront">
             <span>Peso: {{ p.peso }}</span>
         </div>

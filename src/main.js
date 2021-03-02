@@ -15,14 +15,13 @@ import 'firebase/firestore'
 import 'firebase/storage'
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyBPdJnGwAka9OY5hUD68jFJw8S-nbXRizA",
-  authDomain: "docode-b6073.firebaseapp.com",
-  databaseURL: "https://docode-b6073.firebaseio.com",
-  projectId: "docode-b6073",
-  storageBucket: "docode-b6073.appspot.com",
-  messagingSenderId: "580082578686",
-  appId: "1:580082578686:web:1e788c02a0f9ac4c1f21af"
-}
+  apiKey: "AIzaSyADI8UuZMGaHWeqnpSySA49sDCy06Ll4s4",
+  authDomain: "pokeapi-db413.firebaseapp.com",
+  projectId: "pokeapi-db413",
+  storageBucket: "pokeapi-db413.appspot.com",
+  messagingSenderId: "547932804114",
+  appId: "1:547932804114:web:6969e7ec6d433bb46234cb"
+};
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const storage = firebase.storage()

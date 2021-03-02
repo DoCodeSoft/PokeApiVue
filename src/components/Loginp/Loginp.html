@@ -1,0 +1,13 @@
+<div>
+    <h1 id="demo">{{titulo}}</h1>
+    <hr>
+    
+    <form @submit.prevent="login">
+      <label for="usuario">Usuario:</label>
+      <input v-model="usuario.user" type="text" name="usuario" id="usuario">
+
+      <label for="pass">Contraseña:</label>
+      <input v-model="usuario.pass" type="password" name="password" id="pass">
+      <input class="btn btn-success" type="submit" value="Acceder">
+    </form>
+</div>
