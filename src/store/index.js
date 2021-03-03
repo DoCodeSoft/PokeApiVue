@@ -16,7 +16,8 @@ export default new Vuex.Store({
             6:'Marijo',
             7:'Rodrigo',
         },
-        username: 0
+        username: 0,
+        pokemon: {}
     },
     mutations: {
         SET_USERNAME(state,username){
@@ -25,6 +26,9 @@ export default new Vuex.Store({
         SET_LOADING(state,status){
             state.loading = status
         },
+        SET_POKEMON(state, obj){
+            state.pokemon = obj
+        }
     },
     actions: {
         GET_USERNAME(context, id) {
@@ -34,11 +38,15 @@ export default new Vuex.Store({
         CARGANDO(context,estatus){
             context.commit('SET_LOADING', estatus)
         },
+        POKEMON(context, obj){
+            context.commit('SET_POKEMON',obj)
+        }
     },
     getters: {
         docode: state => state.docode,
         username: state => state.username,
         //===================================
-        loading: state => state.loading
+        loading: state => state.loading,
+        pokemon: state => state.pokemon
     }
 })

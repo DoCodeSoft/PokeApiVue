@@ -7,13 +7,15 @@
 import axios from "axios"
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import Head from '@/components/Head.vue'
+
+import { mapActions } from 'vuex'
 
     export default {
         name: 'Pokeapi',
         data() {
             return {
                 titulo: "Pokeapi - Demo",
-                mostrar: true,
                 pokemones: []
             }
         },
@@ -21,9 +23,12 @@ import 'firebase/auth'
             this.obtenerApi()
         },
         methods: {
-            logout() {
-                firebase.auth().signOut()
-                this.$router.replace('/loginp')
+            ...mapActions([
+                'POKEMON'
+            ]),
+            verMas(p) {
+                this.POKEMON(p)
+                this.$router.replace('/detalle') // Detalle
             },
             obtenerApi() {
                 let url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=10'
@@ -71,6 +76,9 @@ import 'firebase/auth'
                 return movesFinal
             }
         },
+        components: {
+            Head
+        }
     }
 
 </script>

@@ -1,0 +1,39 @@
+//@import "../../styles/_variables.scss";
+
+h1{
+    position: relative;
+    top: 25px;
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pokeball{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    margin: 0px auto;
+    position: relative;
+    top: 250px;
+    border-radius: 50%;
+    box-shadow: 0 0 18px rgb(82, 80, 80);
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(0,0,0,1) 45%, rgba(0,0,0,1) 55%, rgba(255,0,0,1) 55%);   
+}
+.esfera{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 18px rgb(82, 80, 80);
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 32%, rgba(0,0,0,1) 32%, rgba(0,0,0,1) 38%, rgba(255,255,255,1) 38%, rgba(255,255,255,1) 56%, rgba(0,0,0,1) 56%, rgba(38,38,38,1) 58%, rgba(0,0,0,1) 100%); 
+}
+
+.esfera:hover{
+    background: radial-gradient(circle, rgb(253, 0, 0) 32%, rgba(0,0,0,1) 32%, rgba(0,0,0,1) 38%, rgba(255,255,255,1) 38%, rgba(255,255,255,1) 56%, rgba(0,0,0,1) 56%, rgba(38,38,38,1) 58%, rgba(0,0,0,1) 100%);
+    cursor: pointer;
+}
