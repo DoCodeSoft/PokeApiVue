@@ -9,6 +9,7 @@ import Pokeapi from '../components/Pokeapi/Pokeapi.vue'
 import Loginp from '../components/Loginp/Loginp.vue'
 import PokeapiH from '../components/PokeapiH/PokeapiH.vue'
 import Detalle from '../components/Detalle.vue'
+import Tabla from '../components/Tabla.vue'
 
 import firebase from 'firebase/app'
 import 'firebase/auth'
@@ -22,7 +23,9 @@ const routes = [
   {path: '/loginp',name: 'Loginp',component: Loginp},
   {path: '/demo',name: 'Demo',component: Demo},
   {path: '/login',name: 'Login',component: Login},
-  {path: '/table',name: 'Table',component: Tablez}
+  {path: '/table',name: 'Table',component: Tablez},
+  {path: '/tabla',name: 'Tabla',component: Tabla}
+
 ]
 
 const router = new VueRouter({

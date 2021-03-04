@@ -19,19 +19,23 @@ import { mapActions } from 'vuex'
                 pokemones: []
             }
         },
+        mounted() {
+        },
         created() {
             this.obtenerApi()
         },
         methods: {
             ...mapActions([
-                'POKEMON'
+                'POKEMON',
+                'CARGANDO'
             ]),
             verMas(p) {
                 this.POKEMON(p)
                 this.$router.replace('/detalle') // Detalle
             },
             obtenerApi() {
-                let url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=10'
+                this.CARGANDO(true)
+                let url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=250'
                 axios.get(url)
                 .then((result) => {
                     let urls = []
@@ -51,6 +55,7 @@ import { mapActions } from 'vuex'
                 })
                 Promise.all(respuesta).then((valores)=>{
                     this.obtenerDetalle(valores)
+                    this.CARGANDO(false)
                 })
             },
             obtenerDetalle(valores) {

@@ -7,6 +7,7 @@
                     <li class="item"><a href="/pokedex" class="link" id="pokeli">Pokedex</a></li>
                     <li class="item"><a href="#" class="link">Sobre Nosotros</a></li>
                     <li class="item"><button @click="logout" class="btn btn-danger">Cerrar Sesion</button></li>
+                    <li class="item"><a href="/tabla">Tabla</a></li>
                 </ul>
             </nav>
         </header>
